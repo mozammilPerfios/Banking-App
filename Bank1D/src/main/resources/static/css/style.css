@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+ body{
+    background: linear-gradient(332deg, rgba(2,0,36,1) 0%, rgba(1,116,89,1) 47%, rgba(0,212,255,1) 100%);
+    font-family:'poppins',sans-serif;
+    overflow: hidden;
+    
+        height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+ }
+ .container2{
+    width: 480px;
+    height: 640px;
+    margin:15% auto;
+    background:transparent;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+ }
+ form h3{
+    text-align: center;
+    margin-bottom: 40px;
+    color: whitesmoke;
+    text-transform: uppercase;
+ }
+
+
+ .container2 .form-step1{
+    width:100%;
+    position: absolute;
+    top: 140px;
+    transition: 0.5s;
+ }
+ .container2 .form-step2{
+    width: 100%;
+    position: absolute;
+    top: 140px;
+    left: 550px;
+    transition: 0.5s;
+ }
+ .container2 .form-step3{
+    width: 100%;
+    position: absolute;
+    top: 140px;
+    left: 550px;
+    transition:0.5s
+ }
+ form input{
+    width: 100%;
+    padding-top:15px;
+    margin:20px 0;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background:transparent;
+ }
+
+ ::placeholder{
+    color:whitesmoke;
+    font-size: medium;
+ }
+
+ .buttons{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+ }
+ form div button
+ {
+    width: 200px;
+    height: 35px;
+    margin: 0 10px;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    border-radius: 30px;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+ }
+#submit{
+	width: 200px;
+    height: 35px;
+    margin: 0 10px;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    border-radius: 30px;
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+ .step-row{
+    width:480px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -1px 5px -1px #000;
+    position: relative;
+ }
+
+ .step-col{
+    width:160px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+ }
+
+ #progress{
+    position: absolute;
+    height: 100%;
+    width: 140px;
+    background-color: rgb(60, 179, 113);
+    transition: 1s;
+ }
+
+ #progress::after{
+    content: '';
+    height: 0;
+    width:0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    position:absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid rgb(60, 179, 113);
+ }

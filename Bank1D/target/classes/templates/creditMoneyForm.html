@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration and Login App</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+	
+</head>
+<style>
+.container{
+margin-top:200px;
+}
+.box{
+  margin-left:30%;
+  margin-right:30%;
+  background:whitesmoke;
+}
+ 
+ .box form input{
+    width: 100%;
+    padding-bottom:20px;
+    margin-top:20px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline:none;
+    background:transparent;
+ }
+ 
+ form button {
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    color: #fff;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    position:center;
+    font-size:20px;
+    font-weight:bolder;
+    
+ }
+ .message{
+ margin-left:30%;
+ margin-right:30%;
+ margin-bottom:20px;
+ font-size:18px;
+ color:red;
+ }
+ .heading{
+ height:60px;
+ background:aqua;
+ }
+ p{
+ padding:15px;
+ font-size:25px;
+ text-align:center;}
+ ::placeholder {
+  font-size:20px;
+}
+</style>
+<body>
+<div class="container">
+<div class="message">
+<div th:if="${param.wrongCvv}">
+     <div class="alert alert-danger">Enter correct pin please</div>
+    </div>
+<div th:if="${param.lessBalance}">
+     <div class="alert alert-danger">Requested Amount exceeds the credit limit</div>
+    </div>
+<div th:if="${param.success}">
+     <div class="alert alert-info">Successfully Transferred</div>
+    </div>
+    <div th:if="${param.repay}">
+     <div class="alert alert-danger">Repay Previous Loan First</div>
+    </div>
+    </div>
+<div class="box">
+<form th:action="@{/creditMoney}" method="post" th:object="${cct}">
+<div class="heading">
+<P>Transfer Money to Your account</P>
+
+</div>
+<input type="number" placeholder="Credit Amount" th:field="*{creditUsed}" required>
+<input type="password" placeholder="cvv" th:field="*{cvv}" required>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
+</body>
+</html>
